@@ -1,9 +1,39 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+require(`dotenv`).config()
+const fetch = require(`node-fetch`)
+const { createHttpLink } = require(`apollo-link-http`)
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: `Gatsby Hasura Starter`,
+    description: `Demonstration of Gatsby and Hasura`,
+    author: `@ksmorano`,
+  },
+  plugins: [
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: `hasura`,
+        fieldName: `hasura`,
+        createLink: () => {
+          return createHttpLink({
+            uri: process.env.GATSBY_HASURA_GRAPHQL_URL,
+            headers: {
+              "x-hasura-admin-secret":
+                process.env.GATSBY_HASURA_GRAPHQL_ADMIN_SECRET,
+            },
+            fetch,
+          })
+        },
+        refetchInterval: 10,
+      },
+    },
+  ],
 }

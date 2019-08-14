@@ -1,3 +1,13 @@
 import React from "react"
+import TodoList from "../components/Todo/TodoList"
+import TodoForm from "../components/Todo/TodoForm"
 
-export default () => <div>Hello world!</div>
+import "../styles.scss"
+
+export default () => (
+  <section className="content">
+    <TodoForm />
+    <hr />
+    <TodoList />
+  </section>
+)
