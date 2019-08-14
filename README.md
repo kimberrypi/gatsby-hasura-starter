@@ -3,7 +3,9 @@
   Gatsby-Hasura Starter Boilerplate
 </h1>
 
-This is a boilerplate for a Gatsby app paired with a Hasura project as the backend.
+This is a boilerplate for a Gatsby app paired with a Hasura project as the backend. 
+
+The sample app is a simple to do list that demonstrates both query and mutation from the linked Hasura project. View the sample app at: [ghs.ksmorano.com](ghs.ksmorano.com)
 
 ## ⚙️ Setup
 
@@ -18,7 +20,7 @@ This is a boilerplate for a Gatsby app paired with a Hasura project as the backe
 
 2.  **Setup Hasura endpoint**
     
-    !! The example won't work unless Hasura is configured properly according to the example. To make the example run:
+    !! **The sample app won't work unless Hasura is configured properly.** To make the example run:
     1. Create a Hasura project. For more information, visit <a href="https://hasura.io">Hasura.io</a>. They have a **very easy** setup with Heroku.
     2. Add a todo table using the Hasura console:
     
