@@ -5,7 +5,7 @@ import TodoForm from "../components/Todo/TodoForm"
 import "../styles.scss"
 
 export default () => (
-  <section className="content">
+  <section className="card card-content has-background-white">
     <TodoForm />
     <hr />
     <TodoList />

@@ -7,16 +7,10 @@ body {
   align-items: center;
   height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    background: white;
-    padding: 2rem;
-    width: 30vw;
-    height: 70vh;
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-  }
+p {
+  margin-bottom: 5px;
 }
 
 input,

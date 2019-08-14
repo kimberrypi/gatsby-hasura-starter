@@ -5,7 +5,7 @@ import classNames from "classnames"
 
 const GET_TODOS = gql`
   {
-    todo(order_by: { priority: desc }) {
+    todo(order_by: { priority: asc }) {
       id
       task
       priority
@@ -28,7 +28,7 @@ const TodoList = () => {
 
   return (
     <div>
-      <h3>My Todo:</h3>
+      <h3 className="title is-5">My Todo:</h3>
       {data.todo.map(task => (
         <p key={task.id}>
           <span
