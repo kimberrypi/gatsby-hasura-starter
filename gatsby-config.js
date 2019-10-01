@@ -28,5 +28,12 @@ module.exports = {
         refetchInterval: 10,
       },
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: process.env.GATSBY_AWS_S3_BUCKET_NAME,
+        region: process.env.GATSBY_AWS_S3_REGION,
+      },
+    },
   ],
 }

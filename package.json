@@ -10,6 +10,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "deploy": "yarn -n \"-r dotenv/config\" && yarn build && AWS_PROFILE=kim gatsby-plugin-s3 deploy",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "bulma": "^0.7.5",
     "classnames": "^2.2.6",
     "gatsby": "^2.13.58",
+    "gatsby-plugin-s3": "^0.3.2",
     "gatsby-plugin-sass": "^2.1.8",
     "gatsby-source-graphql": "^2.1.5",
     "isomorphic-fetch": "^2.2.1",
