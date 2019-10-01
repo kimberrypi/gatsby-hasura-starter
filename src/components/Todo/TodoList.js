@@ -1,7 +1,8 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { useQuery } from "@apollo/react-hooks"
 import { gql } from "apollo-boost"
 import classNames from "classnames"
+import { container } from "./todo.module.scss"
 
 const GET_TODOS = gql`
   {
@@ -27,22 +28,26 @@ const TodoList = () => {
     )
 
   return (
-    <div>
+    <Fragment>
       <h3 className="title is-5">My Todo:</h3>
-      {data.todo.map(task => (
-        <p key={task.id}>
-          <span
-            className={classNames("tag", {
-              "is-danger": task.priority === "high",
-              "is-success": task.priority === "low",
-            })}
-          >
-            {task.priority}
-          </span>
-          {` ${task.task}`}
-        </p>
-      ))}
-    </div>
+      <div className={container}>
+        {data.todo.map(task => (
+          <p key={task.id}>
+            {task.priority && (
+              <span
+                className={classNames("tag", {
+                  "is-danger": task.priority === "high",
+                  "is-success": task.priority === "low",
+                })}
+              >
+                {task.priority}
+              </span>
+            )}
+            {` ${task.task}`}
+          </p>
+        ))}
+      </div>
+    </Fragment>
   )
 }
 
