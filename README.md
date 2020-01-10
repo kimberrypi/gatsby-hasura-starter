@@ -5,7 +5,7 @@
 
 This is a boilerplate for a Gatsby app paired with a Hasura project as the backend. 
 
-The sample app is a simple to do list that demonstrates both query and mutation from the linked Hasura project. View the sample app at: [ghs.ksmorano.com](ghs.ksmorano.com)
+The sample app is a simple to do list that demonstrates both query and mutation from the linked Hasura project.
 
 ## ⚙️ Setup
 
